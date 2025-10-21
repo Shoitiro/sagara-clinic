@@ -64,12 +64,12 @@ main {
   min-width: 250px;
 }
 
-.access-map iframe {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  height: auto;
+.access-map {
+  flex: 1;
+  min-width: 300px;
+  min-height: 450px;
 }
+
 
 .site-title {
   color: white;
