@@ -1,0 +1,125 @@
+form {
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fffaf0;
+  border-radius: 8px;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #0077cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+body {
+  background-image: url("../images/3412435_m.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* 画面全体に広げる */
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.access-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.access-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.access-map {
+  flex: 1;
+  min-width: 300px;
+}
+
+.site-title {
+  color: white;
+}
+nav ul {
+  list-style: none;       /* 「・」を消す */
+  padding: 0;
+  margin: 0;
+  display: flex;          /* 横並びにする */
+  gap: 50px;              /* 各リンクの間隔を調整 */
+}
+
+nav li a {
+  text-decoration: none;  /* 下線を消す（必要なら） */
+  color: white;           /* リンクの色（背景に合わせて調整） */
+  font-weight: bold;
+}
+nav {
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
+  padding: 10px 0;
+}
+
+nav li a:hover {
+  color: #ffd700; /* ホバー時にゴールド色に変化 */
+}
+@media screen and (max-width: 600px) {
+  nav ul {
+    flex-direction: column;     /* 縦並びに切り替え */
+    gap: 10px;
+    align-items: center;
+  }
+
+  .access-container {
+    flex-direction: column;     /* アクセス情報も縦並びに */
+  }
+
+  form {
+    max-width: 90%;             /* フォームの横幅を縮める */
+  }
+}
+
+img {
+  display: block;
+  margin-bottom: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.4); /* 明るさ調整 */
+  z-index: -1;
+}

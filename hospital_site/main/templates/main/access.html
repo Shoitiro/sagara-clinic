@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block title %}アクセス | さがら小児科{% endblock %}
+
+{% block content %}
+<div class="access-container">
+  <div class="access-text">
+    <h2>📍 アクセス情報</h2>
+    <p>住所：大分県中津市沖代町2丁目1番地60</p>
+    <p>沖代郵便局の隣です。</p>
+  </div>
+
+<div class="access-map">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7127986993078!2d131.19317373989665!3d33.58680544227474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543fa1c838b8def%3A0xad91b23c7efe948b!2z44GV44GM44KJ5bCP5YWQ56eR!5e0!3m2!1sja!2sjp!4v1760626481933!5m2!1sja!2sjp"
+    width="600"
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+<style>
+  .access-map {
+    margin-left: -400px;
+    margin-top: 0px;    /* ← 上に20px寄せる（数値は調整可能） */
+  }
+</style>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}さがら小児科{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1 class="site-title">さがら小児科</h1>
+    <nav>
+      <ul>
+       <li><a href="{% url 'home' %}">ホーム</a></li>
+       <li><a href="{% url 'staff' %}">院長紹介</a></li>
+       <li><a href="{% url 'facility' %}">予防接種</a></li>
+       <li><a href="{% url 'services' %}">診療内容</a></li>
+       <li><a href="{% url 'access' %}">アクセス</a></li>
+       <li><a href="{% url 'news' %}">お知らせ</a></li>
+
+       <!--
+       <li><a href="{% url 'reservation' %}">予約フォーム</a></li>
+       <li><a href="{% url 'questionnaire' %}">ウェブ問診</a></li>
+       -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 さがら小児科</p>
+  </footer>
+</body>
+</html>

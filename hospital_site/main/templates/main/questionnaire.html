@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}ウェブ問診｜さがら小児科{% endblock %}
+
+{% block content %}
+<h2>ウェブ問診</h2>
+<p style="color: #555; font-size: 14px;">
+※この問診票は初診の方のみご記入ください。再診の方は不要です。
+</p>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">送信</button>
+</form>
+{% endblock %}
