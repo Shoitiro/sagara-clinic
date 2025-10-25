@@ -38,7 +38,7 @@ button:hover {
 }
 
 body {
-  background-image: url("../images/3412435_m.jpg");
+  background-image: url("../images/image0.jpeg");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -124,4 +124,48 @@ body::before {
   height: 100%;
   background-color: rgba(255,255,255,0.4); /* 明るさ調整 */
   z-index: -1;
+}
+.hours-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+.hours-table th {
+  font-weight: bold;
+  background-color: transparent; /* ← 背景色を消す */
+}
+
+.hours-table td:first-child {
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.hours-table small {
+  font-size: 1em;
+  color: #0a0a0a;
+}
+
+.hours-table th,
+.hours-table td {
+  border: 1px solid #666; /* 濃いグレーで視認性を保つ */
+  border-collapse: collapse;
+}
+.hours-table th,
+.hours-table td {
+  padding: 12px;
+  font-size: 16px;
+}
+
+.hours-table {
+  margin-left: 20px;
+}
+
+.hours-table th:first-child,
+.hours-table td:first-child {
+  width: 120px; /* ← ここで幅を調整。100〜140pxあたりが目安 */
+  white-space: nowrap; /* 改行を防ぐ（必要なら） */
+}
+.clinic-hours h2 {
+  margin-left: 20px; /* ← 数値を調整して自然な位置に */
 }
