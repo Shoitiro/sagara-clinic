@@ -38,13 +38,25 @@ button:hover {
 }
 
 body {
-  background-image: url("../images/image0.jpeg");
+  position: relative;
+  /* background-image: url("../images/79582.jpg"); */  /* ← この行を削除またはコメントアウト */
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  min-height: 100vh; /* 画面全体に広げる */
+  min-height: 120vh;
   margin: 0;
-  padding: 0;
+  padding: 0 1.5em; /* 左右に1.5emの余白を追加 */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4); /* 白40%でやや薄く */
+  z-index: -1;
 }
 
 main {
@@ -76,8 +88,9 @@ main {
 }
 nav ul {
   list-style: none;       /* 「・」を消す */
-  padding: 0;
-  margin: 0;
+  max-width: 960px;
+  padding: 0 1em;
+  margin: 0 auto;
   display: flex;          /* 横並びにする */
   gap: 50px;              /* 各リンクの間隔を調整 */
 }
@@ -88,8 +101,11 @@ nav li a {
   font-weight: bold;
 }
 nav {
-  background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
+  width: 100vw;
+  background-color: rgba(15, 228, 244, 0.851); /* 半透明の青背景 */
   padding: 10px 0;
+  position: relative;
+  z-index: 1;
 }
 
 nav li a:hover {
@@ -111,20 +127,6 @@ nav li a:hover {
   }
 }
 
-img {
-  display: block;
-  margin-bottom: 0;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255,255,255,0.4); /* 明るさ調整 */
-  z-index: -1;
-}
 .hours-table {
   width: 90%;
   border-collapse: collapse;
@@ -141,6 +143,14 @@ body::before {
   background-color: transparent;
 }
 
+.hours-table th:first-child,
+.hours-table td:first-child {
+  width: 100px;         /* 必要に応じて調整（例：100〜140px） */
+  padding: 6px 8px;     /* 余白も控えめに */
+  text-align: center;   /* 中央揃え（任意） */
+  vertical-align: middle;
+}
+
 .hours-table small {
   font-size: 1em;
   color: #0a0a0a;
@@ -153,8 +163,20 @@ body::before {
 }
 .hours-table th,
 .hours-table td {
-  padding: 12px;
-  font-size: 16px;
+  padding: 2px;
+  font-size: 20px;
+}
+.hours-table td {
+  text-align: center;      /* 横方向（左右）の中央揃え */
+  vertical-align: middle;  /* 縦方向（上下）の中央揃え */
+}
+
+.hours-table td:nth-child(n+2):nth-child(-n+8),
+.hours-table th:nth-child(n+2):nth-child(-n+8) {
+  padding: 5px 2px; /* 横幅を狭める */
+  width: 50px;          /* 横幅を明示的に指定 */
+  text-align: center;
+  vertical-align: middle;
 }
 
 .hours-table {
@@ -163,9 +185,83 @@ body::before {
 
 .hours-table th:first-child,
 .hours-table td:first-child {
-  width: 120px; /* ← ここで幅を調整。100〜140pxあたりが目安 */
-  white-space: nowrap; /* 改行を防ぐ（必要なら） */
+  width: 120px;
+  white-space: nowrap;
 }
+
 .clinic-hours h2 {
-  margin-left: 20px; /* ← 数値を調整して自然な位置に */
+  margin-left: 20px;
+}
+
+.access-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.access-text {
+  text-align: left;
+}
+
+.access-map iframe {
+  display: block;
+  width: 100%;
+  margin: 0;
+  border: 0;
+}
+
+img {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.cropped-image {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ヘッダー全体 */
+.site-header {
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+/* 名刺画像 */
+.meishi-image {
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+/* 住所・電話番号ブロック */
+.clinic-contact {
+  font-size: 14px;              /* ← 8px → 14px に戻しました（読みやすさ重視） */
+  line-height: 1.6;
+  color: #333;
+  margin: 0 auto 10px auto;
+  text-align: center;
+  width: fit-content;
+}
+
+/* ヘッダー内の横並び用（必要なら） */
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  line-height: 1.0; /* ← 1.6 より詰まった印象になります */
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+}
+
+table tr {
+  height: 60px; /* 任意の高さに調整 */
 }
