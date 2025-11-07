@@ -1,8 +1,45 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
-{% block title %}診療案内｜さがら小児科{% endblock %}
+{% block title %}診療内容｜さがら小児科{% endblock %}
 
 {% block content %}
-<h2>診療案内</h2>
-<p>ここに診療案内を掲載します。</p>
+  <h2>診療内容</h2>
+  <p>小児科</p>
+  <section class="clinic-hours">
+    <h2>診療時間</h2>
+    <table class="hours-table">
+      <tr>
+        <th>診療時間</th>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+        <th>土</th>
+        <th>日</th>
+      </tr>
+      <tr>
+        <td>8:30〜12:30<br><small>※水・土は13:00まで</small></td>
+        <td>〇</td>
+        <td>〇</td>
+        <td>〇</td>
+        <td>〇</td>
+        <td>〇</td>
+        <td>〇</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>14:00〜18:00</td>
+        <td>〇</td>
+        <td>〇</td>
+        <td>–</td>
+        <td>〇</td>
+        <td>〇</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+    </table>
+  </section>
+ <img src="{% static 'images/IMG_0364.jpg' %}" alt="診療サービス" class="cropped-image">
 {% endblock %}
